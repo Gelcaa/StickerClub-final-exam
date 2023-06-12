@@ -28,6 +28,18 @@
 <!-- FORM -->
    <div class="col-md-6 form">
       <form action = "register.php" method = "post">
+          <div class="mb-3">
+          <input type="text" id="fname" name="fname" placeholder="First Name" class="form-control">
+        </div>
+          <div class="mb-3">
+          <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control">
+        </div>
+          <div class="mb-3">
+          <input type="text" id="emailaddress" name="emailaddress" placeholder="Email Address" class="form-control">
+        </div>
+          <div class="mb-3">
+          <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+        </div>
         <div class="mb-3">
           <input type="text" id="region" name="region" placeholder="Region" class="form-control">
         </div>
@@ -46,7 +58,9 @@
         <div class="mb-3">
           <input type="text" id="otherinfo" name="otherinfo" placeholder="Street Name, Building, House No." class="form-control">
           <p id="otherinfo_error" class="error-message"></p>
-           <?php if (isset($_GET['error'])) { ?>
+           <?php 
+           session_start();
+           if (isset($_GET['error'])) { ?>
      		<p id="email_error"><?php echo $_GET['error']; ?></p>
      	   <?php } ?>
         
